@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thank You — EssyHaven</title>
+<style>
+:root{--black:#0a0a0a;--gold:#c9a84c;--gold2:#e8c97a;--white:#ffffff;--off:#fafaf8;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:Georgia,'Times New Roman',serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--black);color:var(--white);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--black);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,168,76,.15)}
+.logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none}
+.logo-main{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);letter-spacing:.05em;line-height:1}
+.logo-main span{color:var(--gold)}
+.logo-tag{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.6);margin-top:.1rem}
+.thankyou-wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.thankyou-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,168,76,0.08),transparent 70%)}
+.checkmark{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#e8a020);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.8rem;animation:checkPop .6s cubic-bezier(.22,1,.36,1) both;position:relative;z-index:1}
+@keyframes checkPop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.thankyou-wrap h1{font-family:var(--serif);font-size:clamp(2rem,6vw,3.2rem);color:var(--white);font-weight:700;margin-bottom:.8rem;position:relative;z-index:1}
+.thankyou-wrap h1 em{font-style:italic;color:var(--gold)}
+.thankyou-wrap p{font-size:.95rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:440px;margin:0 auto 2.5rem;position:relative;z-index:1}
+.steps{display:flex;flex-direction:column;gap:.8rem;max-width:420px;width:100%;margin:0 auto 2.5rem;position:relative;z-index:1}
+.step{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.15);border-radius:12px;padding:1rem 1.2rem;text-align:left}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--black);font-size:.8rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-text{font-size:.85rem;color:rgba(255,255,255,.7);line-height:1.5}
+.step-text strong{color:var(--white)}
+.btn-group{display:flex;flex-direction:column;gap:.8rem;max-width:320px;width:100%;margin:0 auto;position:relative;z-index:1}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;background:#25d366;color:var(--white);border:none;border-radius:10px;padding:1rem;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:background .25s,transform .25s}
+.btn-wa:hover{background:#1db954;transform:translateY(-2px)}
+.btn-shop{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:1rem;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:all .25s}
+.btn-shop:hover{background:rgba(201,168,76,.08);border-color:var(--gold)}
+footer{background:var(--black);border-top:1px solid rgba(201,168,76,.1);padding:1.5rem;text-align:center;font-size:.68rem;color:rgba(255,255,255,.2)}
+footer span{color:var(--gold)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo"><span class="logo-main">Essy<span>Haven</span></span><span class="logo-tag">Premium Fashion &amp; Accessories</span></a>
+</nav>
+<div class="thankyou-wrap">
+  <div class="thankyou-bg"></div>
+  <div class="checkmark">&#10003;</div>
+  <h1>Thank You for<br>Your <em>Order!</em></h1>
+  <p>Your payment has been received. Here is what happens next to get your order to you safely and quickly.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Send your payment proof</strong> via WhatsApp so we can confirm your order immediately.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text"><strong>Provide your delivery address</strong> and we will give you a delivery timeline.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Sit back and relax</strong> — your order will be dispatched and you will receive tracking updates.</div></div>
+  </div>
+  <div class="btn-group">
+    <a href="https://wa.me/2349165961536?text=Hi!%20I%20just%20completed%20payment%20on%20EssyHaven.%20Please%20confirm%20my%20order." target="_blank" class="btn-wa">&#128172; Send Payment Proof</a>
+    <a href="shop.html" class="btn-shop">Continue Shopping &#8594;</a>
+  </div>
+</div>
+<footer>&#169; 2026 <span>EssyHaven</span>. All rights reserved.</footer>
+</body>
+</html>
