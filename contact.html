@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — EssyHaven</title>
+<style>
+:root{--bg:#070711;--card:#0e0e1c;--purple:#7c3aed;--pink:#ec4899;--cyan:#06b6d4;--gold:#f59e0b;--green:#10b981;--white:#ffffff;--gray:#94a3b8;--border:rgba(124,58,237,0.2);--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--serif:Georgia,'Times New Roman',serif}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--white);overflow-x:hidden}
+.page-transition{position:fixed;inset:0;background:var(--purple);z-index:9999;transform:scaleX(0);transform-origin:left;pointer-events:none}
+.page-transition.slide-in{animation:slideIn .4s cubic-bezier(.76,0,.24,1) forwards}
+.page-transition.slide-out{animation:slideOut .4s cubic-bezier(.76,0,.24,1) forwards}
+@keyframes slideIn{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+@keyframes slideOut{from{transform:scaleX(1);transform-origin:right}to{transform:scaleX(0);transform-origin:right}}
+.announce{background:linear-gradient(90deg,var(--purple),var(--pink),var(--cyan),var(--purple));background-size:200% 100%;animation:gradientFlow 4s linear infinite;padding:.5rem 1rem;text-align:center;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+@keyframes gradientFlow{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+nav{background:rgba(7,7,17,0.95);backdrop-filter:blur(20px);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border)}
+.logo{text-decoration:none;display:flex;align-items:baseline;gap:.1rem}
+.logo-e{font-family:var(--serif);font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-rest{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--white)}
+.logo-haven{font-family:var(--serif);font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:2px;transition:width .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-shop{display:inline-flex;background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white);padding:.55rem 1.2rem;border-radius:8px;font-size:.75rem;font-weight:700;text-decoration:none;transition:transform .25s}
+.nav-shop:hover{transform:translateY(-2px)}
+.page-hero{padding:4rem 1.5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(6,182,212,0.08),transparent 70%)}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,6vw,3.5rem);color:var(--white);font-weight:700;position:relative;margin-bottom:.5rem}
+.page-hero h1 .grad{background:linear-gradient(135deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
+.page-hero p{font-size:.9rem;color:var(--gray);position:relative}
+.content{padding:2.5rem 1.5rem;max-width:600px;margin:0 auto}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;margin-bottom:1rem;display:flex;align-items:flex-start;gap:1.2rem;transition:all .3s}
+.contact-card:hover{border-color:rgba(124,58,237,.4);box-shadow:0 10px 30px rgba(124,58,237,.1);transform:translateY(-2px)}
+.contact-icon{width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.contact-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);font-weight:700;margin-bottom:.3rem}
+.contact-value{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.contact-desc{font-size:.78rem;color:var(--gray);line-height:1.5}
+.contact-btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white);padding:.6rem 1.2rem;border-radius:8px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;margin-top:.8rem;transition:all .25s}
+.contact-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(124,58,237,.4)}
+.wa-big{background:var(--card);border:2px solid rgba(37,211,102,.3);border-radius:20px;padding:2.5rem 1.5rem;text-align:center;margin-top:1.5rem;position:relative;overflow:hidden}
+.wa-big::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(37,211,102,0.05),transparent 70%)}
+.wa-big h3{font-family:var(--serif);font-size:1.4rem;color:var(--white);margin-bottom:.5rem;position:relative;font-weight:700}
+.wa-big p{font-size:.85rem;color:var(--gray);margin-bottom:1.5rem;line-height:1.6;position:relative}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;background:#25d366;color:var(--white);border:none;border-radius:12px;padding:1rem;font-size:.9rem;font-weight:700;letter-spacing:.06em;text-decoration:none;transition:all .25s;position:relative}
+.wa-btn:hover{background:#1db954;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,211,102,.4)}
+footer{background:var(--card);border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;margin-top:2rem}
+.footer-links{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;transition:color .25s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:.68rem;color:rgba(255,255,255,.2)}
+.wa-panel{position:fixed;right:0;bottom:6rem;z-index:998;display:flex;align-items:center;transform:translateX(calc(100% - 54px));transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.wa-panel:hover{transform:translateX(0)}
+.wa-text-side{background:linear-gradient(135deg,#128c7e,#25d366);padding:.7rem 1rem;border-radius:12px 0 0 12px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);white-space:nowrap}
+.wa-icon-side{width:54px;height:54px;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:waSpin 3s ease-in-out infinite}
+@keyframes waSpin{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+.wa-icon-side svg{width:26px;height:26px;fill:var(--white)}
+.wa-panel a{display:flex;align-items:center;text-decoration:none}
+@media(max-width:600px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+<div class="page-transition" id="pt"></div>
+<div class="announce">✦ New Collection Available · Fast Delivery Nationwide · Secure Paystack Checkout ✦</div>
+<nav>
+  <a href="index.html" class="logo" onclick="navigate(event,'index.html')"><span class="logo-e">E</span><span class="logo-rest">ssy</span><span class="logo-haven">Haven</span></a>
+  <div class="nav-links">
+    <a href="index.html" onclick="navigate(event,'index.html')">Home</a>
+    <a href="shop.html" onclick="navigate(event,'shop.html')">Shop</a>
+    <a href="about.html" onclick="navigate(event,'about.html')">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <a href="shop.html" class="nav-shop" onclick="navigate(event,'shop.html')">Shop Now &#8594;</a>
+</nav>
+<div class="page-hero">
+  <h1>Get In <span class="grad">Touch</span></h1>
+  <p>We are always happy to hear from you</p>
+</div>
+<div class="content">
+  <div class="contact-card">
+    <div class="contact-icon">&#128172;</div>
+    <div>
+      <div class="contact-label">WhatsApp</div>
+      <div class="contact-value">+234 916 596 1536</div>
+      <div class="contact-desc">Chat with us for orders, enquiries and delivery updates. We respond fast!</div>
+      <a href="https://wa.me/2349165961536?text=Hi!%20I%27d%20like%20to%20enquire%20about%20a%20product%20on%20EssyHaven." target="_blank" class="contact-btn">Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon">&#128666;</div>
+    <div>
+      <div class="contact-label">Delivery</div>
+      <div class="contact-value">Nationwide Delivery</div>
+      <div class="contact-desc">We deliver across Nigeria. Orders above &#8358;30,000 get free delivery. Timeline communicated via WhatsApp.</div>
+    </div>
+  </div>
+  <div class="contact-card">
+    <div class="contact-icon">&#128274;</div>
+    <div>
+      <div class="contact-label">Payment</div>
+      <div class="contact-value">Secure via Paystack</div>
+      <div class="contact-desc">Pay with card, bank transfer or USSD. All payments are 100% secure and encrypted.</div>
+    </div>
+  </div>
+  <div class="wa-big">
+    <h3>Ready to order?</h3>
+    <p>Chat with us directly on WhatsApp. We will confirm your order, arrange delivery and keep you updated every step of the way.</p>
+    <a href="https://wa.me/2349165961536?text=Hi!%20I%20want%20to%20place%20an%20order%20on%20EssyHaven." target="_blank" class="wa-btn">&#128172; Start Order on WhatsApp</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-links"><a href="index.html" onclick="navigate(event,'index.html')">Home</a><a href="shop.html" onclick="navigate(event,'shop.html')">Shop</a><a href="about.html" onclick="navigate(event,'about.html')">About</a><a href="contact.html">Contact</a></div>
+  <div class="footer-copy">&#169; 2026 EssyHaven. All rights reserved.</div>
+</footer>
+<div class="wa-panel"><a href="https://wa.me/2349165961536?text=Hi!%20I%20found%20EssyHaven%20and%20I%27d%20like%20to%20place%20an%20order." target="_blank"><div class="wa-text-side">&#128172; Chat Us</div><div class="wa-icon-side"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div></a></div>
+<script>function navigate(e,url){e.preventDefault();var pt=document.getElementById('pt');pt.className='page-transition slide-in';setTimeout(function(){window.location.href=url;},400);}window.addEventListener('load',function(){var pt=document.getElementById('pt');pt.className='page-transition slide-out';setTimeout(function(){pt.className='page-transition';},400);});</script>
+</body>
+</html>
